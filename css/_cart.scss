@@ -1,0 +1,271 @@
+.cart-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cart-details {
+	padding-top: 95px;
+	padding-bottom: 130px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+
+	&__buttons button {
+		width: 235px;
+		height: 50px;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 17px;
+		background: $colorWhite;
+		color: $colorDark;
+	}
+}
+
+//---button-animation---//
+.button-hover {
+	position: relative;
+	overflow: hidden;
+	outline: 1.5px solid;
+	outline-color: $colorBorder;
+	outline-offset: 0px;
+}
+
+.button-hover::before {
+	background: $colorWhite;
+	opacity: 0.8;
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 15%;
+	left: -20%;
+	transition: 2.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.button-hover:hover::before {
+	left: 105%;
+}
+
+.button-active:active {
+	box-shadow: 0px -1px 0px 3px $colorMiddle;
+	transition: 0s;
+	transform: perspective(200px) translateY(2px) translateZ(-3px);
+}
+
+//---button-animation---//
+
+.cart-item {
+	width: 652px;
+	height: 306px;
+	box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+	display: flex;
+	position: relative;
+
+	&__close {
+		position: absolute;
+		text-align: center;
+		top: 28px;
+		right: 22px;
+		width: 18px;
+		height: 18px;
+	}
+
+	&__close:hover {
+		transform: rotateZ(180deg);
+	}
+
+	&__close:active svg path{
+		fill: $colorGrey;
+		transition: 0s;
+	}
+
+	&__close:active svg {
+		width: 95%;
+		transition: 0s;
+	}
+
+	&__photo {
+		height: 100%;
+	}
+
+	&__info {
+		margin-left: 30px;
+		width: 260px;
+	}
+
+	&__info a {
+		display: block;
+		margin-top: 22px;
+		height: 90px;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 29px;
+		color: $colorMain;
+		word-spacing: 10px;
+		overflow: hidden;
+	}
+
+	&__info a:hover {
+		color: $colorHover;
+	}
+
+	&__details {
+		margin-top: 12px;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 26px;
+		text-align: left;
+		color: $colorGrey;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	&__row {
+		display: flex;
+		gap: 6px;
+	}
+
+	&__price {
+		color: $colorHover;
+	}
+
+	&__quantity {
+		width: 30px;
+		height: 25px;
+		margin-left: 24px;
+		border: 1px solid $colorMiddle;
+		padding-left: 15px;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 26px;
+		color: $colorGrey;
+	}
+}
+
+.order-details {
+	margin-top: 110px;
+	width: 360px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.adress {
+
+	& h3 {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: $colorMain;
+	}
+
+	&__form {
+		margin: 20px 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__input {
+		height: 45px;
+		width: 100%;
+		border: 1.5px solid $colorBorder;
+		font-weight: 300;
+		font-size: 13px;
+		line-height: 16px;
+		color: $colorMain;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	&__input::placeholder {
+		color: $colorMiddle;
+	}
+
+	&__submit {
+		width: 100px;
+		height: 35px;
+		text-align: center;
+		font-weight: 300;
+		font-size: 11px;
+		line-height: 13px;
+		color: #4A4A4A;
+		background-color: $colorWhite;
+	}
+}
+
+.checkout {
+	display: flex;
+	flex-direction: column;
+	background: $colorLight;
+
+	&__total-price {
+		height: 105px;
+		text-align: right;
+	}
+
+	&__sub-total {
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 13px;
+		color: $colorDark;
+		margin-right: 35px;
+		margin-top: 40px;
+	}
+
+	&__grand-total {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: $colorMain;
+		margin-right: 40px;
+		margin-top: 12px;
+	}
+
+	&__grand-total span {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		color: $colorHover;
+	}
+
+	&__sub-total span::before,
+	&__grand-total span::before {
+		content: "$";
+		margin-left: 8%;
+	}
+
+	&__button {
+		height: 105px;
+		margin-left: 42px;
+		margin-right: 42px;
+		border-top: 1px solid $colorMiddle;
+		padding-top: 20px;
+	}
+
+	&__button button {
+		height: 50px;
+		width: 100%;
+		background-color: $colorHover;
+		text-align: center;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: $colorWhite;
+	}
+
+	&__button button:hover {
+		background: #e05c6e;
+	}
+}
