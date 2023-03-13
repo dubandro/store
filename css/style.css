@@ -906,6 +906,17 @@ blockquote::after {
 .cart-item__close:hover {
   transform: rotateZ(180deg);
 }
+.cart-item__close:hover + .cart-item__photo img {
+  filter: brightness(0.6);
+}
+.cart-item__close:hover + .cart-item__photo::after {
+  z-index: 10;
+  box-shadow: inset 0px 0px 15px rgba(70, 70, 70, 0.2);
+}
+.cart-item__close:active + .cart-item__photo::after {
+  color: #8F8F8F;
+  transition: 0s;
+}
 .cart-item__close:active svg path {
   fill: #8F8F8F;
   transition: 0s;
@@ -915,22 +926,46 @@ blockquote::after {
   transition: 0s;
 }
 .cart-item__photo {
+  display: flex;
+  width: 262px;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.cart-item__photo::after {
+  position: absolute;
+  width: 120px;
+  height: 100%;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #E1E1E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "remove";
+  z-index: -10;
+  transition: 1.2s;
+}
+.cart-item__photo img {
+  max-width: inherit;
   height: 100%;
 }
 .cart-item__info {
   margin-left: 30px;
   width: 260px;
 }
-.cart-item__info a {
-  display: block;
+.cart-item__title {
   margin-top: 22px;
   height: 90px;
+  overflow: hidden;
+}
+.cart-item__title a {
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #222222;
   word-spacing: 10px;
-  overflow: hidden;
 }
 .cart-item__info a:hover {
   color: #F16D7F;
@@ -962,8 +997,8 @@ blockquote::after {
   padding-left: 15px;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 22px;
   color: #8F8F8F;
 }
 
@@ -990,7 +1025,6 @@ blockquote::after {
 }
 .adress__input {
   height: 45px;
-  width: 100%;
   border: 1.5px solid #A4A4A4;
   font-weight: 300;
   font-size: 13px;
@@ -1022,7 +1056,6 @@ blockquote::after {
   background: #F8F8F8;
 }
 .checkout__total-price {
-  height: 105px;
   text-align: right;
 }
 .checkout__sub-total {
@@ -1039,7 +1072,8 @@ blockquote::after {
   line-height: 19px;
   color: #222222;
   margin-right: 40px;
-  margin-top: 12px;
+  margin-top: 15px;
+  margin-bottom: 22px;
 }
 .checkout__grand-total span {
   font-weight: 700;
@@ -1052,11 +1086,11 @@ blockquote::after {
   margin-left: 8%;
 }
 .checkout__button {
-  height: 105px;
   margin-left: 42px;
   margin-right: 42px;
   border-top: 1px solid #E1E1E1;
-  padding-top: 20px;
+  padding-top: 18px;
+  padding-bottom: 42px;
 }
 .checkout__button button {
   height: 50px;

@@ -74,24 +74,63 @@
 		right: 22px;
 		width: 18px;
 		height: 18px;
-	}
 
-	&__close:hover {
-		transform: rotateZ(180deg);
-	}
+		&:hover {
+			transform: rotateZ(180deg);
+		}
 
-	&__close:active svg path{
-		fill: $colorGrey;
-		transition: 0s;
-	}
+		&:hover+.cart-item__photo img {
+			filter: brightness(0.6);
+		}
 
-	&__close:active svg {
-		width: 95%;
-		transition: 0s;
+		&:hover+.cart-item__photo::after {
+			z-index: 10;
+			box-shadow: inset 0px 0px 15px rgba(70, 70, 70, 0.2);
+		}
+
+		&:active+.cart-item__photo::after {
+			color: $colorGrey;
+			transition: 0s;
+		}
+
+		&:active svg path {
+			fill: $colorGrey;
+			transition: 0s;
+		}
+
+		&:active svg {
+			width: 95%;
+			transition: 0s;
+		}
 	}
 
 	&__photo {
-		height: 100%;
+		display: flex;
+		width: 262px;
+		overflow: hidden;
+		justify-content: center;
+		align-items: center;
+
+		&::after {
+			position: absolute;
+			width: 120px;
+			height: 100%;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 17px;
+			color: $colorMiddle;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			content: "remove";
+			z-index: -10;
+			transition: 1.2s;
+		}
+
+		& img {
+			max-width: inherit;
+			height: 100%;
+		}
 	}
 
 	&__info {
@@ -99,16 +138,19 @@
 		width: 260px;
 	}
 
-	&__info a {
-		display: block;
+	&__title {
+		// display: block;
 		margin-top: 22px;
-		height: 90px;
+		height: 90px; // ограничить высоту длинных названий
+		overflow: hidden;
+	}
+
+	&__title a {
 		font-weight: 400;
 		font-size: 24px;
 		line-height: 29px;
 		color: $colorMain;
 		word-spacing: 10px;
-		overflow: hidden;
 	}
 
 	&__info a:hover {
@@ -145,8 +187,8 @@
 		padding-left: 15px;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 22px;
-		line-height: 26px;
+		font-size: 18px;
+		line-height: 22px;
 		color: $colorGrey;
 	}
 }
@@ -178,7 +220,6 @@
 
 	&__input {
 		height: 45px;
-		width: 100%;
 		border: 1.5px solid $colorBorder;
 		font-weight: 300;
 		font-size: 13px;
@@ -210,7 +251,6 @@
 	background: $colorLight;
 
 	&__total-price {
-		height: 105px;
 		text-align: right;
 	}
 
@@ -229,7 +269,8 @@
 		line-height: 19px;
 		color: $colorMain;
 		margin-right: 40px;
-		margin-top: 12px;
+		margin-top: 15px;
+		margin-bottom: 22px
 	}
 
 	&__grand-total span {
@@ -246,11 +287,11 @@
 	}
 
 	&__button {
-		height: 105px;
 		margin-left: 42px;
 		margin-right: 42px;
 		border-top: 1px solid $colorMiddle;
-		padding-top: 20px;
+		padding-top: 18px;
+		padding-bottom: 42px
 	}
 
 	&__button button {
