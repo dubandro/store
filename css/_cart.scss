@@ -1,11 +1,11 @@
-.cart-box {
+.content-box {
 	display: flex;
 	justify-content: space-between;
+	padding-bottom: 130px;
 }
 
 .cart-details {
 	padding-top: 95px;
-	padding-bottom: 130px;
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
@@ -218,20 +218,9 @@
 		gap: 20px;
 	}
 
-	&__input {
-		height: 45px;
-		border: 1.5px solid $colorBorder;
-		font-weight: 300;
-		font-size: 13px;
-		line-height: 16px;
-		color: $colorMain;
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
-	&__input::placeholder {
-		color: $colorMiddle;
-	}
+	// &__input::placeholder {
+	// 	color: $colorMiddle;
+	// }
 
 	&__submit {
 		width: 100px;
@@ -242,6 +231,21 @@
 		line-height: 13px;
 		color: #4A4A4A;
 		background-color: $colorWhite;
+	}
+}
+
+.text-input {
+	height: 45px;
+	border: 1.5px solid $colorBorder;
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 16px;
+	color: $colorMain;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	&::placeholder {
+		color: $colorMiddle;
 	}
 }
 
@@ -299,7 +303,6 @@
 		width: 100%;
 		background-color: $colorHover;
 		text-align: center;
-		font-style: normal;
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 19px;

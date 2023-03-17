@@ -13,6 +13,22 @@ html {
 	transition: all 0.6s;
 }
 
+:focus,
+:active {
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
 li {
 	list-style-type: none;
 }
@@ -38,12 +54,14 @@ img {
 	max-height: 100%;
 }
 
-body {
-	font-family: "Lato", sans-serif;
+button,
+input {
+	font: inherit;
 }
 
-button, input {
-	font: inherit;
+body {
+	font-family: "Lato", sans-serif;
+	font-style: normal;
 }
 
 @-webkit-keyframes rotate-scale-up {
@@ -706,6 +724,7 @@ blockquote::after {
 // Стили для других страниц
 @import "catalog";
 @import "cart";
+@import "reg";
 
 // Стили для планшетов и мобильных
 @import "tablet";

@@ -1,0 +1,111 @@
+.loyality-info {
+	width: 652px;
+	padding-top: 65px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	color: $colorMain;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 29px;
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__list li::before {
+		width: 20px;
+		height: 16px;
+		content: url("data:image/svg+xml; charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='20' height='16' viewBox='0 0 20 16' fill='none'><path d='M19.8035 0H18.0904C17.8502 0 17.6222 0.111827 17.4752 0.303176L7.3702 13.2826L2.52481 7.05754C2.45151 6.96318 2.35808 6.88689 2.25153 6.83438C2.14499 6.78187 2.0281 6.75451 1.90963 6.75437H0.196467C0.032258 6.75437 -0.0584248 6.94572 0.0420614 7.07494L6.75503 15.6981C7.06874 16.1006 7.67166 16.1006 7.98782 15.6981L19.9579 0.318087C20.0584 0.191349 19.9677 0 19.8035 0V0Z' fill='%23222222'/></svg>");
+		margin-right: 22px;
+	}
+}
+
+.reg-form {
+	width: 360px;
+	margin-top: 65px;
+	color: $colorMain;
+
+	&__input {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		& legend {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+		}
+
+		& p {
+			font-weight: 300;
+			font-size: 13px;
+			line-height: 16px;
+			color: $colorBorder;
+		}
+	}
+
+	&__radio {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		justify-content: flex-start;
+
+		& label {
+			font-weight: 300;
+			font-size: 11px;
+			line-height: 17px;
+		}
+
+		& input {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border-radius: 50%;
+			width: 17px;
+			height: 17px;
+			border: 2px solid $colorBorder;
+			transition: 0.3s all linear;
+			outline: none;
+
+			&:not(:first-child) {
+				margin-left: 10px;
+			}
+
+			&:checked {
+				border: 5px solid $colorBorder;
+			}
+
+			&:checked+label {
+				text-decoration: underline $colorGrey;
+			}
+		}
+	}
+}
+
+.join-now__button {
+	width: 167px;
+	margin-top: 40px;
+
+	& button {
+		height: 50px;
+		width: 100%;
+		background-color: $colorHover;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		color: $colorWhite;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	& button:hover {
+		background: #e05c6e;
+	}
+}
