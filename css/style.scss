@@ -431,7 +431,7 @@ body {
 .product-box__content {
 	padding-top: 40px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 360px);
+	grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 	justify-content: center;
 	gap: 30px;
 }

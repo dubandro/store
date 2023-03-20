@@ -1,7 +1,8 @@
-.content-box {
+.shoping-cart-box {
 	display: flex;
 	justify-content: space-between;
 	padding-bottom: 130px;
+	gap: 20px;
 }
 
 .cart-details {
@@ -106,7 +107,7 @@
 
 	&__photo {
 		display: flex;
-		width: 262px;
+		max-width: 262px;
 		overflow: hidden;
 		justify-content: center;
 		align-items: center;
@@ -139,9 +140,8 @@
 	}
 
 	&__title {
-		// display: block;
 		margin-top: 22px;
-		height: 90px; // ограничить высоту длинных названий
+		height: 100px; // ограничить высоту длинных названий
 		overflow: hidden;
 	}
 
@@ -158,7 +158,6 @@
 	}
 
 	&__details {
-		margin-top: 12px;
 		font-style: normal;
 		font-weight: 400;
 		font-size: 22px;

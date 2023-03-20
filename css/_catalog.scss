@@ -1,7 +1,6 @@
 .top {
 	background: #f1e4e6; // уточнить
-	padding-top: 60px;
-	padding-bottom: 60px;
+	height: 148px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -47,7 +46,7 @@
 }
 
 .filter-sort {
-	padding-top: 40px;
+	padding-top: 37px;
 	display: flex;
 	gap: 30px;
 }
@@ -71,17 +70,29 @@
 		cursor: pointer;
 	}
 
+	&__summary span {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		color: $colorMain;
+
+	}
+
 	&[open] {
 		background-color: $colorWhite;
 		box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
 	}
 
-	&[open] &__summary {
+	&[open] &__summary span {
 		color: $colorHover;
 	}
 
 	&[open] .filter-img path {
 		fill: $colorHover;
+	}
+
+	&__content {
+		overflow: hidden;
 	}
 }
 
